@@ -1,0 +1,35 @@
+/**app.wxss**/
+/* 并不是所有的样式 都可以从全局 继承，只有很少的某些样式 能从全局继承 */
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}  */
+
+/* page: 指的是 页面 */
+/* 因为小程序 会自动地 为每个wxml文件的最外层 包裹一个page组件(小程序中的组件 相当于 html中的标签, 但是 组件是自定义的带样式的标签) */
+
+/* 由于各个组件都是被page包含在内的，所以对page设置字体大小 也会影响 组件的字体大小 */
+
+/* 如果在全局样式表(app.wxss)里设置的样式 影响到了 组件，我们就说: 组件"继承了"全局样式 */
+/* 并不是 在全局样式表中设置的所有样式 都可以被组件继承 */
+/* 只有全局样式中的font和color，能被组件继承 */
+/* 因为组件需要相对封闭的环境 不受外界的影响，所以 不能让全局的样式 随意的影响 组件的样式 */
+
+/* notice: 但是几乎所有的css样式，page页面 都是可以从全局继承的 */
+
+/* 全局样式中 最好不要乱写样式，因为会影响所有页面 和 组件的部分css样式(font, color) */
+/* font-family, font-size都是font */
+page{
+  font-family: "PingFangSC-Thin";
+  font-size: 32rpx;
+}
+
+
+
+
+

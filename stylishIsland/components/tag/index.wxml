@@ -1,0 +1,11 @@
+<!--components/tag/index.wxml-->
+
+<!-- 把外部样式类tag-class写在container的后面，原因是 希望tag-class的样式 可以覆盖/添加container设置的样式。 -->
+<!-- 在小程序中container被叫做 普通样式，tag-class被叫做 外部样式 -->
+<view bind:tap="onTap" class="container tag-class">
+  <!-- <slot name="before"></slot> -->
+  <text>{{text}}</text>
+  <!-- <text>{{num}}</text> -->
+  <!-- 插槽slot的作用：接收 外部传进来的标签，当外部 不传入标签时(slot为空，为空的slot 不会被显示出来)。插槽slot的名字 由name属性 指定 -->
+  <slot name="after"></slot>
+</view>

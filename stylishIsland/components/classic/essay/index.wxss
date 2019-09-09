@@ -1,0 +1,7 @@
+/* components/classic/essay/index.wxss */
+
+/* @import "xxx.wxss"; 末尾要记得加上‘分号’ */
+@import "../common.wxss";
+
+/* 模板template 可以让我们复用wxml/wxss */
+

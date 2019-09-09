@@ -1,0 +1,70 @@
+/* components/book/index.wxss */
+
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 3px 3px #e3e3e3;
+  width: 240rpx;
+  height: 360rpx;
+  margin-top: 30rpx;
+}
+
+/* wxss中的选择器 都要采用class选择器，不支持其它选择器 */
+.book-img{
+  /* 设置width height，让图片充满.container容器 */
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.description{
+  /* rpx前的数值 不要采用奇数，要使用偶数 */
+  /* 由于padding的left-padding和right-padding占用了额外的空间。如果给description的width是240rpx, 加上padding会超出父元素container。
+  父元素宽度240rpx - 10rpx -15rpx = 215rpx -> 216rpx */
+  width: 216rpx;
+  /* 不设置高度，让description自适应 子元素的高度 */
+  /* 使description所在区域 覆盖到 book-img上，description位于容器container的最底部 */
+  /* absolute所在元素(脱离文档流) 相对于父级relative/absolute进行定位 */
+  position: absolute;
+  /* 使description元素 与container元素 底部没有间距 */
+  bottom: 0;
+  /* 设置description的底色 */
+  background-color: #fff;
+  padding: 5rpx 10rpx 8rpx 15rpx;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  /* 也设置border radius，以防description覆盖book-img的圆角 */
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.title{
+  margin-top: 10rpx;
+  /*  */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.author{
+  font-size: 20rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.foot{
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footer{
+  color: #666666;
+}

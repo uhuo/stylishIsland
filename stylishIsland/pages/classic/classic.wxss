@@ -1,0 +1,55 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  /* header内部的eposide和like都是inline-flex(宽度 自适应子元素的宽度) */
+  /* 由于把原本的header(宽度默认是占据整行的) 放入container(flex)容器内，header的宽度(而header的宽度 没有进行设置) 就变为了 自适应子元素的宽度 */
+  /* 所以 设置header的宽度为100% 就可以了 */
+  width: 100%;
+  /* 在使用flex进行布局时，出现的奇怪现象 大都和 没有设置宽高 有关。如果你认为 某元素要占据固定的宽高时，就要显示的设置宽高，这样可以避免奇怪的现象 出现 */
+}
+
+.episode{
+  margin-left: 20rpx;
+  margin-top:4rpx;
+}
+
+.like{
+  margin-top: 6rpx;
+}
+
+.navi{
+  position: absolute;
+  /* 设置navi 离 页面底部的距离 */
+  bottom: 40rpx;
+
+  /* 怎样让navi居中？给navi的外层容器 设置flex布局 align-items:center */
+}
+
+.like-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30rpx;
+}
+
+.share-btn{
+  margin-left: 10rpx;
+  margin-top: 28rpx;
+}
+
+.share{
+  width: 40rpx;
+  height: 40rpx;
+}

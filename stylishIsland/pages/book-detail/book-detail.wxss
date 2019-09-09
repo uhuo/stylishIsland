@@ -1,0 +1,224 @@
+/* pages/book-detail/book-detail.wxss */
+
+.container{
+  background-color: #f5f5f5;
+  width: 100%;
+}
+
+.head{
+  background-color: #fff;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  color: #2f2f2f;
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  font-weight: 600;
+}
+
+.author{
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+.head image{
+  width: 200rpx;
+  height: 300rpx;
+  box-shadow: 2px 2px 3px #e3e3e3;
+}
+
+.sub-container{
+  width: 690rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.headline{
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #2f2f2f;
+  margin-bottom: 20rpx;
+}
+
+.comment-container{
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;  
+}
+
+.comment-container v-tag{
+  margin-right: 16rpx;
+  margin-bottom: 10rpx;
+}
+
+.num{
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #aaa;
+}
+
+/* notice:  v-tag和:nth-child之间 是不能留空格的 */
+/* tips：选择comment-container的第一个子元素v-tag 下的 子元素view，就可以对自定义组件的顶层view 设置样式 */
+/* even偶数 odd奇数 */
+/* .comment-container > v-tag:nth-child(1) > view{
+  background-color: #fffbdd;
+}
+
+.comment-container > v-tag:nth-child(2) > view{
+  background-color: #eefbff;
+} */
+
+/* v-tag 自定义组件，是不能对自定义组件的整体 设置css样式的。因为自定义组件 是多个内置组件的封装。对自定义组件设置样式时 到底是对哪个内置组件设置样式 是不确定的 */ 
+/* view text image内置组件 */
+
+/* .comment-container > v-tag:nth-child(1) > view{}, 这种修改自定义组件样式的方式 需要了解组件内部的结构。 */
+/* 开源组件 除了要提供默认的样式，还要有机制 来满足用户对自定义样式的需求。此时 需要组件开发者 要平衡 组件的封装原则 和 修改默认样式的机制(是否需要用户 了解组件的内部结构) */
+/* 满足组件封装原则的两个例子：在页面中使用组件的属性(properties) 向组件传递数据。组件的slot。 */
+/* 组件封装原则：参数传递 */
+/* 修改组件内部样式，可以在组件内部设置一个属性(来接收 包含样式信息的文本，比如把background-color: #fffbdd当做一个文本传递到组件内，然后用数据绑定的方式 绑定到相应标签上-内联样式)。但是该方法有缺陷：需要在页面的js中定义好样式(在js中出现样式代码 本身就不好)，再把数据绑定到组件的属性上。在组件中拿到传递过来的样式字符串后，再把样式字符串(使用内联样式的方式)绑定到 组件内部的标签上 */
+/* 除了组件属性(传递页面数据)，slot(传递标签)，小程序还提供了外部样式externalClass(传递css样式)。这3种方式都不违反 组件的封装原则 */
+
+.ex-tag1{
+  /* 对外部样式 使用!important，可以使得外部样式的优先级 高于 组件内的普通样式，从而实现 外部样式 覆盖组件的内部样式 */
+  background-color: #fffbdd !important;
+}
+
+.ex-tag2{
+  background-color: #eefbff !important;
+}
+
+.content{
+  text-indent: 58rpx;
+  font-weight: 500;
+}
+
+.detail-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 100rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.vertical{
+  display: flex;
+  flex-direction: column;
+}
+
+.description{
+  color: #999;
+  margin-right: 30rpx;
+}
+
+.post-container{
+  width: 690rpx;
+  height: 100rpx;
+  padding: 0 30rpx;
+  background-color: #fff;
+  box-shadow: 1px -1px 1px #e3e3e3;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-fake{
+  width: 460rpx;
+  height: 60rpx;
+  padding-left: 20rpx;
+  border: 1px solid #999;
+  border-radius: 15px;
+  font-size: 22rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.like-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like{
+  margin-top: 10rpx;
+  margin-right: 30rpx;
+}
+
+.share-btn{
+  margin-left: 10rpx;
+  margin-top: 18rpx;
+}
+
+.share{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.posting-container{
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.posting-header{
+  width: 100%;
+  height: 100rpx;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancel{
+  color: #666;
+}
+
+.posting-header text{
+  padding: 25rpx;
+}
+
+.posting-header > text:first-child{
+  font-size: 28rpx;
+  color: #bbb;
+}
+
+.posting-container .comment-container{
+  width: 690rpx;
+  padding: 40rpx 30rpx 0 30rpx;
+}
+
+.postingInput{
+  width: 690rpx;
+  height: 56rpx;
+  padding-left: 25rpx;
+  margin: 30rpx auto;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+}
+
+.shadow{
+  color: #999;
+}

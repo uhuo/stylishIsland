@@ -1,0 +1,35 @@
+// const format=function(text){}。const关键字 是JavaScript ES6中的语法
+// wxs有自己独立的运行环境，wxs和JavaScript没有关系(只是语法形式长得像而已)，不能使用JavaScript的语法来写wxs
+// wxs的主要特点是：可以在wxml中调用wxs函数, 便于书写 过滤器
+var format=function(text){
+  if (!text){
+    return 
+  }
+  // getRegExp(pattern[, flags]), pattern匹配模式 flags匹配规则的修饰符。函数返回一个 正则表达式对象。'\\\\n'匹配'\\n'
+  var reg = getRegExp('\\\\n', 'g')
+  // 在text中 把\\n替换为\n
+  /* 小程序会把text标签内的所有文本当做是一个段落，类似于HTML中的p标签。text不会为所有文本中 进行换行后的文本 加上text-indent. 可以考虑给换行后的文本 增加'&nbsp;'。 */
+  // text标签 会把'\n'自动解析为换行符，如果想让text标签解析'&nbsp;' 就需要在text标签上 设置属性decode="true"
+  return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+var limit = function(array, length){
+  return array.slice(0, length)
+}
+
+var tagBgcolor = function(index){
+  var result = ''
+  if (index == 0){
+    result = 'ex-tag1'
+  }
+  if(index == 1){
+    result = 'ex-tag2'
+  }
+  return result
+}
+
+module.exports={ 
+  format: format,
+  limit: limit,
+  tagBgcolor: tagBgcolor
+}

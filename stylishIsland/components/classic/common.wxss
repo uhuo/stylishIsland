@@ -1,0 +1,32 @@
+/* components/classic/common.wxss */
+
+/* 模板template 可以让我们复用wxml/wxss */
+
+.classic-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.classic-img{
+  width: 750rpx;
+  height: 500rpx;
+}
+
+.tag{
+  width: 46rpx;
+  height: 142rpx;
+  /* relative,相对位置 是 相对于偏移前 tag所在的位置，往左310 往上58, 不脱离文档流 */
+  position: relative;
+  right: 310rpx;
+  bottom: 58rpx;
+}
+
+.content{
+  font-size: 36rpx;
+  /* 为了让文本换行，给文本设置一个宽度 */
+  /* 由于当前文本很长，所以给content设置个宽度 就自动换行了 */
+  /* 当给文本所在元素 以固定的宽度，而文本又很短时，就会出现文字(不在屏幕中间)的情况 */
+  /* 所以不应该给文本所在元素以固定宽度。应该在文字较短时 文本所在元素的宽度 是自适应，同时 要设置content的最大宽度 保证较长的文本 能够换行 */
+  max-width: 550rpx;
+}

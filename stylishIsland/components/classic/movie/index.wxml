@@ -1,0 +1,11 @@
+<!--components/classic/movie/index.wxml-->
+
+<view hidden="{{hidden}}" class="classic-container">
+  <image class="classic-img" src="{{img}}" />
+  
+  <image class="tag" src="images/movie@tag.png" />
+  <!-- <image class="tag" wx:if="{{tagPic}}" src="{{tagPic}}" /> -->
+  <!-- <image class="tag" src="http://127.0.0.1:16129/__pageframe__/components/classic/movie/images/movie@tag.png" /> -->
+  
+  <text class="content">{{content}}</text>
+</view>

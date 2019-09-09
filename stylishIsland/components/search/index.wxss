@@ -1,0 +1,136 @@
+/* components/search/index.wxss */
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header{
+  width: 750rpx;
+  height: 100rpx;
+  background-color: #ffffff;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 99;
+}
+
+.search-container{
+  margin-left: 20rpx;
+  background-color: #f5f5f5;
+  border-radius: 50px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cancel{
+  width: 120rpx;
+  line-height: 68rpx;
+  border: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.icon{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 24rpx;
+  margin-right: 16rpx;
+}
+
+.in-bar{
+  color: #999;
+}
+
+.bar{
+  width: 470rpx;
+  height: 68rpx;
+  font-size: 28rpx;
+}
+
+.cancel-img{
+  width: 28rpx;
+  height: 28rpx;
+  margin: 10rpx 20rpx 10rpx 30rpx;
+  /* margin-left: 30rpx;
+  margin-right: 20rpx; */
+}
+
+.history{
+  width: 690rpx;
+  margin: 160rpx 0 20rpx 0;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.hot-search{
+  margin-top: 70rpx;
+}
+
+.title{
+  line-height: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.chunk{
+  width: 10rpx;
+  height: 30rpx;
+  background-color: #000;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+
+.tags{
+  width: 630rpx;
+  padding-left: 30rpx;
+  margin-top: 24rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tags v-tag{
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.books-container{
+  width: 570rpx;
+  padding: 0 90rpx 0 90rpx;
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.book{
+  margin-bottom: 25rpx;
+}
+
+.loading-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.loading{
+  margin: 50rpx 0 50rpx 0;
+}
+
+.empty-tip{
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+}

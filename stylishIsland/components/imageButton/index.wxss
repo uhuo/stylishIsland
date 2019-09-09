@@ -1,0 +1,7 @@
+/* components/imageButton/index.wxss */
+
+.container{
+  /* 覆盖button的默认样式 */
+  padding: 0 !important;
+  border: none !important;
+}

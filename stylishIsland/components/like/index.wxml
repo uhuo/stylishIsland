@@ -1,0 +1,19 @@
+<!--components/like/index.wxml-->
+
+<!-- bind 事件绑定是不会阻止 冒泡事件向上冒泡的，catch 事件绑定是阻止 冒泡事件向上冒泡的 -->
+<!-- 在小程序中，绝大多数的事件 都是冒泡事件，只有少数的几个是 非冒泡事件(如<form/>的submit，<input/>的input，<scroll-view/>的scroll) -->
+<view bind:tap="onLike" class="container">
+  <image src="{{like?yesSrc:noSrc}}"></image>
+  <!-- <image src="{{like?'images/like.png':'images/like@dis.png'}}"></image> -->
+  <!-- 上面由于在img的src外层使用了’双引号‘，那么在三元表达式中的 图片路径(本身是字符串的形式) 就应该使用’单引号‘。不然会报错。 -->
+  <text>{{count}}</text>
+  <!-- 上面一行中的 9，在后期 是要从服务器中 取数据的 -->
+</view>
+
+
+<!-- 页面中 数据的来源 -->
+<!-- 1. 数据在wxml中写死 -->
+<!-- 2. 数据绑定：数据在JavaScript中，通过JavaScript 把数据发给wxml，再由wxml呈现数据 -->
+<!-- 3. js从服务器中加载数据，js再把数据发给wxml -->
+<!-- 对于不同类型的数据，采用不同的方式 来获取数据 -->
+<!-- 对于 图片数据 可以直接写在wxml中，对于经常变化的数据 需要从服务器加载  -->

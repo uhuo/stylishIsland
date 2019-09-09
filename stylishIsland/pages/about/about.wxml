@@ -1,0 +1,7 @@
+<!--pages/about/about.wxml-->
+<image class="vendor" src="/images/my/vendor.png"></image>
+
+<!-- <image class="about" />
+<navigator open-type="navigate" target="miniProgram" app-id="XXXXXXXXXXX" class="nav">
+  <image class="vendor" src="/images/my/vendor.png"  />
+</navigator> -->

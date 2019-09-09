@@ -1,0 +1,55 @@
+/* components/episode/index.wxss */
+/* 组件在 不允许使用 id选择器(尽量采用class选择器) */
+
+
+.container{
+  /* 外层container的高度 是根据index元素的高度 确定的 */
+  height: 60rpx;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.index-container{
+  display: flex;
+  flex-direction: row;
+  /* 保证No. index line 三者的基线 是对齐的 */
+  align-items: baseline;
+}
+
+.plain{
+  font-size: 32rpx;
+}
+
+.index{
+  font-size: 60rpx;
+  /* 限制index的行高，使index的行高 与 文字大小 一致 */
+  line-height: 60rpx;
+  font-weight: 800;
+  margin-right: 14rpx;
+}
+
+.line{
+  height: 44rpx;
+  margin-right: 14rpx;
+  border-left: 1px solid black;
+}
+
+.date-container{
+  height: 60rpx;
+  display: flex;
+  flex-direction: column;
+  /* 由于month year整体偏靠上，设置margin-top 使其下移一点距离 */
+  margin-top: 5rpx;
+  /* padding-top: 8rpx; */
+}
+
+.month{
+  font-size: 24rpx;
+  line-height: 24rpx;
+  margin-right: 2rpx;
+}
+
+
+.year{
+  font-size: 20rpx; 
+}

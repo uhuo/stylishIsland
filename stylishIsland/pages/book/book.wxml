@@ -1,0 +1,32 @@
+<!--pages/book/book.wxml-->
+
+<!-- wxml中的for循环：wx:for, 为item指定别名 wx:for-item="itemName" -->
+<!-- 什么时候才需要给item起别名？当该wxml对应的 js文件的data中 有同名变量时 -->
+<!-- 该block(不同于其他标签): 没有实际的语义。既不会显示在页面上，也不会对页面上其它内容有影响。可以把block当做一个括号 -->
+<!-- <block wx:for="{{books}}" wx:for-item="itemName">
+  <v-book book="{{itemName}}" />
+</block> -->
+<!-- <v-book wx:for="{{books}}" book="{{item}}" /> 可读性不好 -->
+<!-- wx:key的意义 为列表中的每个元素 指定唯一的标识。 -->
+<!-- wx:key的取值(如果列表中的元素是Object对象，wx:key的值 可以是 元素的某个属性)(该属性在各个元素中 不会有 重复的数据，且 该属性一定要是Number/String类型)). wx:key=""双引号里面 不需要加上 双花括号，直接指定 元素的某个属性 -->
+<!-- wx:key的取值(如果列表中的元素是Number/String类型，直接写成 wx:key="*this") -->
+
+<view wx:if="{{!searching}}" class="container">
+  <view class="header">
+    <!-- book页面中的 ’搜索书籍‘，只是一个样式的展示，用户的输入 不是在book页面中进行的。用box元素 模拟输入框的样子。 -->
+    <view class="box" bind:tap="onSearching">
+      <image class="search" src="/images/icon/search.png" />
+      <text>搜索书籍</text>
+    </view>
+  </view>
+  <view class="sub-container">
+    <image class="head-img" src="/images/book/quality.png" />
+    <view class="books-container">
+      <block wx:key="id" wx:for="{{books}}">
+        <v-book class="book-cmp" book="{{item}}" />
+      </block>
+    </view>
+  </view>
+</view>
+
+<v-search more="{{more}}" bind:cancel="onCancel" wx:if="{{searching}}" />
